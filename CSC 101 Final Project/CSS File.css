@@ -1,0 +1,133 @@
+/*This is a comment*/
+/*CSS Formatting is different than HTML. Use ; to terminate a code.*/
+/*div is for large chunks, divided in "classes" i.e. categories. id is for specific styling*/
+/*Use period "." then name of the div class to style that block.*/
+/*Use hastag "#" then name of the id to style that id content*/
+
+
+body {
+    background-image: url("background.jpg");     /*Original code was [background-color: #2d3e50;]*/
+    background-size: 25%;     /*Size adjusted to the full size of the page (from inspect element)*/
+    font-family: Cambria;
+    font-size: 16px;     /*Default size is 12px*/
+}
+
+h1 {
+    text-align: center
+}
+
+#first-head {
+    font-size:58px;
+    border-bottom-style:solid;
+    border-bottom-width:thick;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: inherit;
+    margin-bottom: 50px;
+}
+
+figure {
+    text-align:center
+}
+
+hr {
+    border-color:black;
+}
+
+.introduction {
+    background-color: #425b76;
+    margin: 36px;
+    padding: 20px;
+}
+
+.calculator {
+    text-align: center;
+    background-color: #A5C4E0;
+    padding: 50px;
+    margin: 200px;
+    width: 50%;     /*Changing width would mis-align the calculator, changed margins from 600px to auto instead to push it to the middle. Adapts to different screen sizes with auto.*/
+    margin-left: auto;     /*margin-left etc. overwrites the broader "margin" command*/
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.calculator_input {
+    margin: 5px;
+    padding: 20px;
+}
+
+.calculator_output {
+    margin: 5px;
+    padding: 20px;
+}
+
+#income {
+    background-color: lightgray;
+    border-block-color: gray;
+    padding: 3px;
+    width: 180px;
+}
+
+#expense {
+    background-color: lightgray;
+    border-block-color: gray;
+    padding:3px;
+    width:180px;
+}
+
+#calc_button {
+    background-color: #00adec;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;     /*display:inline-block sets content alignment in a way.*/
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#reset_button {
+    background-color:gray;
+    border:none;
+    border-radius:5px;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#cashflow {
+    background: none;
+    border: none;
+    width: 100px;     /*The decrease in width is to make them look neater, however it makes $10B the max user input*/
+}
+
+#necessities {
+    background: none;
+    border: none;
+    width: 100px;
+}
+
+#wants {
+    background: none;
+    border: none;
+    width: 100px;
+}
+
+#savings {
+    background: none;
+    border: none;
+    width:100px;
+}

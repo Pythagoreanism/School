@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSC 101 Project</title>
+    <link rel="stylesheet" href="CSS File.css" />   <!--The link for the CSS file in the same folder-->
+</head>
+
+<body>
+
+ <div class="introduction">     <!--div element is to divide pieces of code, useful for CSS. "class" attribute is like labeling-->
+  <h1>CSC 101 Project</h1>
+  <h2>50-30-20 Budget Helper</h2>
+  <p>This project will help you budget and manage your money using the popular "50-30-20" rule.</p>
+<hr />
+  <h3>What is the 50-30-20 rule?</h3>
+  <p>The 50-30-20 rule is a popular financing rule that divides your expenses in three separate categories. <b>Needs</b>, <b>Wants</b>, and <b>Savings</b>, respectively. An in-depth article can be found below.</p>
+  <a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator">Click me for more</a>
+  <h3>How to use?</h3>
+  <p>Before you start using this program, you need to know what some terms mean.</p>
+  <ul>
+   <li>Budgeting: Organization of money, and spendeture.</li>
+   <li>Income: The money you receive via work, allowance, etc.</li>
+   <li>Expenses: The amount of money you spend.</li>
+   </ul>
+ </div>
+ 
+ <div class="calculator">
+  <h1>Calculator</h1>
+   <form action="script.php">     <!--action attribute sends the user input to the form in the quotation--> 
+
+       <div>
+         <label for="expense">Your Total Expense: $</label>     <!--Using the "for" and the "id" attributes are for screen readers, also id is used to specific target its content like div classes-->
+         <input type="number" id="expense" name="user_expense" placeholder="Ex. 450" required/>     <!--The "name" attribute like a variable, for the output-->
+       </div>
+       <br />
+
+       <div>
+         <label for="income">Your Total Income: $</label>
+         <input type="number" id="income"  name="user_income" placeholder="Ex. 600" required/>     <!--Boolean attrib. "required" makes an input neccesary for submittion-->
+       </div>
+
+         <input type="submit" />
+   </form>
+ </div>
+</body>
+</html>

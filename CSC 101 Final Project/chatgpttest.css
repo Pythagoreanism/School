@@ -1,0 +1,69 @@
+/* Layout */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 20px;
+}
+
+.intro {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.summary {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.how-to {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.calculator {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+/* Styles */
+
+h1, h2, h3 {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 600px) {
+    .container {
+        display: block;
+        max-width: none;
+    }
+
+    .how-to, .calculator {
+        margin-top: 20px;
+    }
+}

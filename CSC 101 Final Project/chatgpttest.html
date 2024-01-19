@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSC 101 Project</title>
+    <link rel="stylesheet" href="chatgpt.css" />   <!--The link for the CSS file in the same folder-->
+</head>
+
+<body>
+
+<div class="container">
+    <div class="intro">
+        <h1>CSC 101 Project</h1>
+        <br />
+        <h2>50-30-20 Budget Helper</h2>
+        <p>This CSC 101 project will help you budget and manage your money using the popular "50-30-20" rule.</p>
+        <p><a href="#income">Skip to Calculator</a></p>
+        <hr />
+    </div>
+
+    <div class="summary">
+           <h3>What is the 50-30-20 rule?</h3>
+           <p>The 50-30-20 rule is a popular financing rule that divides your expenses in three separate categories. <b>Needs</b>, <b>Wants</b>, and <b>Savings</b>, respectively. An in-depth article can be found below.</p>
+           <a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator">Click me for more</a>
+           <div class="how-to">
+               <h3>How to use?</h3>
+               <p>Before you start using this program, you need to know a quick and basic summary of what some terms mean.</p>
+               <ul>
+                   <li>Budget: A financial estiamte of money, including income and expenditure.</li>
+                   <li>Income: The money you receive via work, allowance, etc.</li>
+                   <li>Expenses: The amount of money you spend.</li>
+               </ul>
+           </div>
+           <p>This calculator is mainly intended for monthly budgeting.<br />Once you know your monthly income and expendeture, you may begin to use the calculator to find out what percentage of your money you should be saving and spending on.</p>
+           <p>Now, you may use the calculator below. Enjoy! :-)</p>
+    
+</div>
+
+    <div class="calculator">
+        <h1>Income and Expense Calculator</h1>
+
+        <form>
+            <div class="calculator_input">
+                <div>
+                    <label for="income"><span style="color:green">Income</span>: $</label>
+                    <input type="number" id="income" name="income" placeholder="Ex. 800" required><br><br>
+                </div>
+
+                <div>
+                    <label for="expense"><span style="color:red">Expense</span>: $</label>
+                    <input type="number" id="expense" name="expense" placeholder="Ex. 350" required><br><br>
+                    <input type="button" id="calc_button" value="Calculate" onclick="calculate()">
+                    <input type="reset" id="reset_button" /><br><br>
+                </div>
+            </div>
+
+            <div class="calculator_output">
+                <div>
+                    <label for="cashflow">Total Cash Left (Cashflow): $</label>
+                    <input type="number" id="cashflow" name="cshflw" readonly /><br><br>
+                    <label for="necessities"><b>50%</b> of Remaining Income (Necessities): $</label>
+                    <input type="number" id="necessities" name="necessities" readonly><br><br>
+                    <label for="wants"><b>30%</b> of Remaining Income (Wants): $</label>
+                    <input type="number" id="wants" name="wants" readonly><br><br>
+                    <label for="savings"><b>20%</b> of Remaining Income (Savings): $</label>
+                    <input type="number" id="savings" name="savings" readonly><br><br>
+                </div>
+            </div>
+        </form>
+
+</div>
+
+        <script>
+        function calculate() {
+            var income = parseFloat(document.getElementById("income").value);
+            var expense = parseFloat(document.getElementById("expense").value);
+            var remaining = income - expense;
+            var necessities = remaining * 0.5;
+            var wants = remaining * 0.3;
+            var savings = remaining * 0.2;
+            document.getElementById("cashflow").value = remaining.toFixed(2);
+            document.getElementById("necessities").value = necessities.toFixed(2);
+            document.getElementById("wants").value = wants.toFixed(2);
+            document.getElementById("savings").value = savings.toFixed(2);
+        }
+        </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSC 101 Project</title>
+    <link rel="stylesheet" href="CSS File.css" />   <!--The link for the CSS file in the same folder-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+
+<body>
+    
+    <div class="introduction">
+        <!--div element is to divide pieces of code, useful for CSS. "class" attribute is like labeling-->
+        <h1 id="first-head">CSC 101 Project</h1>
+        <br />
+        <h2>50-30-20 Budget Helper</h2>
+        <p>This CSC 101 project will help you budget and manage your money using the popular "50-30-20" rule.</p>
+        <p><a href="#income">Skip to Calculator</a></p>
+        <hr />
+        <figure>
+            <blockquote>
+                <p>"A little over 55% of Americans do not use a budget to manage their hard-earned income"</p>
+            </blockquote>
+            <figcaption>according to a new survey by <cite><a href="https://www.thepennyhoarder.com/budgeting/budgeting-statistics/#:~:text=A%20little%20over%2055%25%20of,money%20they%20spent%20last%20month.">The Penny Hoarder.</a></cite>.</figcaption>
+        </figure>
+        <img src="rule graph.jpg" alt="50-30-20 Pie Chart" />
+        <h2>What is the 50-30-20 rule?</h2>
+        <p>The 50-30-20 rule is a popular financing rule that divides your expenses in three separate categories. <b>Needs</b>, <b>Wants</b>, and <b>Savings</b>, respectively. An in-depth article can be found below.</p>
+        <a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator">Click me for more</a>
+        <h2>How to use?</h2>
+        <p>Before you start using this program, you need to know a quick and basic summary of what some terms mean.</p>
+        <ul>
+            <li>Budget: A financial estiamte of money, including income and expenditure.</li>
+            <li>Income: The money you receive via work, allowance, etc.</li>
+            <li>Expenses: The amount of money you spend.</li>
+            <!--INSERT AN IMAGE FOR PRESENTATION REQUIREMENT-->
+        </ul>
+        <p>Once you know your monthly income and expendeture, you may begin to use the calculator to find out what percentage of your money you should be saving and spending on. Insert your monthly income in the "Income" box and your monthly expenses in the "Expense" box.</p>
+        <p>Now, you may use the calculator below. Enjoy! :-)<br /><i>This calculator is mainly intended for monthly budgeting.</i></p>
+    </div>
+
+    <div class="calculator">
+        <h1>Income and Expense Calculator</h1>
+        
+        <form>
+            <div class="calculator_input">
+                <div>
+                    <label for="income"><span style="color:green">Income</span>: $</label>
+                    <input type="number" id="income" name="income" placeholder="Ex. 800" required><br><br>
+                </div>
+
+                <div>
+                    <label for="expense"><span style="color:red">Expense</span>: $</label>     <!--Using "span" element to target content inside another element for CSS styling. Span is a really good multitool-->
+                    <input type="number" id="expense" name="expense" placeholder="Ex. 350" required><br><br>
+                    <input type="button" id="calc_button" value="Calculate" onclick="calculate()">     <!--Attribute "onclick" calls the function "calculate()" upon clicking the button-->
+                    <input type="reset" id="reset_button" /><br><br>
+                </div>
+            </div>
+
+            <div class="calculator_output">
+                <div>
+                    <label for="cashflow">Total Cash Left (Cashflow): $</label>
+                    <input type="number" id="cashflow" name="cshflw" readonly /><br><hr/>
+                    <label for="necessities"><b>50%</b> of Remaining Income (Necessities): $</label>
+                    <input type="number" id="necessities" name="necessities" readonly><br><br>
+                    <label for="wants"><b>30%</b> of Remaining Income (Wants): $</label>
+                    <input type="number" id="wants" name="wants" readonly><br><br>
+                    <label for="savings"><b>20%</b> of Remaining Income (Savings): $</label>
+                    <input type="number" id="savings" name="savings" readonly><br><br>     <!--Attribute "readonly" means user can't edit the text-->
+                </div>
+            </div>
+        </form>
+
+    <script>
+        function calculate() {
+            var income = parseFloat(document.getElementById("income").value);
+            var expense = parseFloat(document.getElementById("expense").value);
+            var remaining = income - expense;
+            var necessities = remaining * 0.5;
+            var wants = remaining * 0.3;
+            var savings = remaining * 0.2;
+            document.getElementById("cashflow").value = remaining.toFixed(2);
+            document.getElementById("necessities").value = necessities.toFixed(2);
+            document.getElementById("wants").value = wants.toFixed(2);
+            document.getElementById("savings").value = savings.toFixed(2);
+        }
+    </script>
+    </div>
+    <img src="Thank you.png" height="100" alt="Thumbs up icon" width="100"/>
+</body>
+</html>

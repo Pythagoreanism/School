@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income and Expense Calculator</title>
+</head>
+<body>
+    <h1>Income and Expense Calculator</h1>
+    <form>
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income"><br><br>
+        <label for="expense">Expense:</label>
+        <input type="number" id="expense" name="expense"><br><br>
+        <input type="button" value="Calculate" onclick="calculate()"><br><br>
+        <label for="necessities">50% of Remaining Income (Necessities):</label>
+        <input type="number" id="necessities" name="necessities" readonly><br><br>
+        <label for="wants">30% of Remaining Income (Wants):</label>
+        <input type="number" id="wants" name="wants" readonly><br><br>
+        <label for="savings">20% of Remaining Income (Savings):</label>
+        <input type="number" id="savings" name="savings" readonly><br><br>
+    </form>
+
+    <script>
+		function calculate() {
+            var income = parseFloat(document.getElementById("income").value);     /*Fetching information from form by its Id, and assigning it a variable*/
+			var expense = parseFloat(document.getElementById("expense").value);
+            var remaining = income - expense;     /*Arithmetic coding to calculate the values*/
+			var necessities = remaining * 0.5;
+			var wants = remaining * 0.3;
+			var savings = remaining * 0.2;
+            document.getElementById("necessities").value = necessities.toFixed(2);     /*Format: document.getElementById("[NAME OF INPUT ELEMENT ID]".value = [FUNCTION VARIABLE].toFixed([NUMBER OF DECIMAL SPACES]);*/
+            document.getElementById("wants").value = wants.toFixed(2);          /*The command is assigning the ID to the calcuated value, the java variable being "fixed"*/
+            document.getElementById("savings").value = savings.toFixed(2);
+            /*Lines 72-74 convert the values to "money form" by formatting decimal points*/
+		}
+    </script>
+</body>
+</html>

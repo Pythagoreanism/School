@@ -1,0 +1,24 @@
+
+<form name="Calculator">
+<table border="2" align="center" cellpadding="10" cellspacing="10" bgcolor="#00FFFF">
+<tr>
+<td>
+<input type="text" name="Input" Size="30">
+<br>
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" name="one" value=" 1 " OnClick="Calculator.Input.value += '1'">
+<input type="button" name="two" value=" 2 " OnCLick="Calculator.Input.value += '2'">
+
+<br>
+<input type="button" name="clear" value=" c " OnClick="Calculator.Input.value = ''">
+<input type="button" name="zero" value=" 0 " OnClick="Calculator.Input.value += '0'">
+<input type="button" name="DoIt" value=" = " OnClick="Calculator.Input.value = eval(Calculator.Input.value)">
+<input type="button" name="div" value=" / " OnClick="Calculator.Input.value += ' / '">
+<br>
+</td>
+</tr>
+</table>
+</form>
